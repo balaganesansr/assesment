@@ -126,4 +126,4 @@ def delete_template(template_id):
     return jsonify({"message": "Template deleted successfully"}), 200
 
 if __name__ == "__main__":
-    app.run(debug=True,port=8000,host="0.0.0.0")
+    app.run(debug=True,port=getenv("PORT"),host="0.0.0.0")
