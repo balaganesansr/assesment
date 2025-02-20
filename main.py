@@ -78,7 +78,7 @@ def create_template():
 @jwt_required()
 def get_templates():
     user_email = get_jwt_identity()
-    user_templates = list(mongo.db.templates.find({"owner": user_email}, {"_id": 0}))
+    user_templates = list(mongo.db.templates.find({"owner": user_email},))
     return jsonify({"templates": user_templates}), 200
 
 @app.route('/template/<template_id>', methods=['GET'])
